@@ -3,23 +3,34 @@ function pageLoaded() {
 }
 
 const files = [
-  "data.json",
-  "message.txt"
+  "imaginary.file",
+  "message.txt",
+  "data.json"
 ]
 
-let oneOrZero = 0;
+let index = files.length;
 
 async function doFetchIt() {
-  oneOrZero = 1-oneOrZero;
-	const response = await fetch( files[ oneOrZero ] );
-  //const response = await fetch('message.txt');
-	let data
 
-  let contentType = response.headers.get("content-type");
-  if (contentType && contentType.includes("application/json")) {
-    data = await response.json();
+  // cycle between 1, 2 & 3 each time the function is called
+  index = (index - 1) % 3;
+
+  // load a file
+	const response = await fetch( files[ index ] );
+
+	let data;
+  if (response.ok) {
+    let contentType = response.headers.get("content-type");
+    if (contentType && contentType.includes("application/json")) {
+      // if we have a JSON object, use it
+      data = await response.json();
+    } else {
+      // if it's not JSON, create an array with the response in
+      data = [ response.text() ];
+    }
   } else {
-    data = ["That's not JSON!", "Oh no!"]
+    // if it's an error, say what the error was
+    data = [`${response.status} when loading ${files[index]}`];
   }
 
   for (const i of data) {
