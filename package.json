@@ -7,7 +7,7 @@
     "url": "git+https://github.com/portsoc/ws_ajax.git"
   },
   "scripts": {
-    "start": "http-server examples"
+    "start": "http-server"
   },
   "author": "Rich Boakes (rjb@port.ac.uk)",
   "license": "ISC",
