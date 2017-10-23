@@ -1,0 +1,18 @@
+{
+  "name": "ws_ajax",
+  "version": "1.0.0",
+  "description": "Examples of doing AJAX, mostly with fetch()",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/portsoc/ws_ajax.git"
+  },
+  "scripts": {
+    "start": "http-server examples"
+  },
+  "author": "Rich Boakes (rjb@port.ac.uk)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/portsoc/ws_ajax/issues"
+  },
+  "homepage": "https://github.com/portsoc/ws_ajax#readme"
+}
