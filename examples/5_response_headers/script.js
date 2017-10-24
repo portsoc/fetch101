@@ -13,7 +13,7 @@ let index = files.length;
 async function doFetchIt() {
 
   // cycle between 1, 2 & 3 each time the function is called
-  index = (index - 1) % 3;
+  index = (index + 1) % files.length;
 
   // load a file
 	const response = await fetch( files[ index ] );
@@ -26,13 +26,14 @@ async function doFetchIt() {
       data = await response.json();
     } else {
       // if it's not JSON, create an array with the response in
-      data = [ response.text() ];
+      data = [ await response.text() ];
     }
   } else {
     // if it's an error, say what the error was
     data = [`${response.status} when loading ${files[index]}`];
   }
 
+  console.log(index, data, response);
   for (const i of data) {
     const li = document.createElement("li");
     li.textContent = i;
