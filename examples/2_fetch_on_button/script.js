@@ -6,7 +6,8 @@ async function doFetchIt() {
 }
 
 function pageLoaded() {
-	window.fetchit.addEventListener('click', doFetchIt);
+	const btn = document.getElementById("fetchit");
+	btn.addEventListener('click', doFetchIt);
 }
 
 
