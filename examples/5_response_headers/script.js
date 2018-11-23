@@ -33,10 +33,11 @@ async function doFetchIt() {
     data = [`${response.status} when loading ${files[index]}`];
   }
 
+  const list = document.getElementById("lecturers");
   for (const i of data) {
     const li = document.createElement("li");
     li.textContent = i;
-    window.lecturers.appendChild(li);
+    list.appendChild(li);
   }
 }
 
