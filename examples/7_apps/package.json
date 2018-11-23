@@ -1,0 +1,29 @@
+{
+  "name": "addapp",
+  "version": "1.0.0",
+  "description": "A demo app for adding two numbers.",
+  "main": "svr.js",
+  "scripts": {
+    "test": "node svr"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/portsoc/ws_ajax.git"
+  },
+  "keywords": [
+    "node",
+    "server",
+    "fetch",
+    "app",
+    "api"
+  ],
+  "author": "Rich Boakes <rich@boakes.org>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/portsoc/ws_ajax/issues"
+  },
+  "homepage": "https://github.com/portsoc/ws_ajax#readme",
+  "dependencies": {
+    "express": "^4.16.4"
+  }
+}
