@@ -7,12 +7,16 @@
     "url": "git+https://github.com/portsoc/ws_ajax.git"
   },
   "scripts": {
-    "start": "http-server"
+    "start": "http-server",
+    "examples": "./node_modules/.bin/http-server examples; "
   },
   "author": "Rich Boakes (rjb@port.ac.uk)",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/portsoc/ws_ajax/issues"
   },
-  "homepage": "https://github.com/portsoc/ws_ajax#readme"
+  "homepage": "https://github.com/portsoc/ws_ajax#readme",
+  "devDependencies": {
+    "http-server": "^0.11.1"
+  }
 }
