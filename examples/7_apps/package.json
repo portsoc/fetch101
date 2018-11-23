@@ -4,7 +4,7 @@
   "description": "A demo app for adding two numbers.",
   "main": "svr.js",
   "scripts": {
-    "test": "node svr"
+    "start": "node svr"
   },
   "repository": {
     "type": "git",

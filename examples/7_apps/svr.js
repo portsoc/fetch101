@@ -3,8 +3,8 @@ const app = express();
 
 app.use(express.static('client'))
 
-app.get('/add', function (req, res) {
- 
+app.get('/add', (req, res) => {
+
     console.log(req.query);
 
     const a = Number(req.query.a);
