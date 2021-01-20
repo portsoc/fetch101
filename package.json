@@ -17,6 +17,15 @@
   },
   "homepage": "https://github.com/portsoc/ws_ajax#readme",
   "devDependencies": {
+    "eslint": "^7.18.0",
+    "eslint-config-portsoc": "^0.8.1",
     "http-server": "^0.12.3"
+  },
+  "eslintConfig": {
+    "extends": "portsoc",
+    "root": true,
+    "env": {
+      "browser": true
+    }
   }
 }
