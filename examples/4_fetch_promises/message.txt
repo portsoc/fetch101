@@ -1,1 +1,0 @@
-Success!  This text was fetched and added to the page using JavaScript.

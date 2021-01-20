@@ -1,36 +1,44 @@
-# AJAX
+# Fetch
 
-* Download a zip of this `ws_ajax` repository or (preferably) clone it thus:
-```bash
-git clone https://github.com/portsoc/ws_ajax.git
-```
-* In your new local `ws_ajax` folder, run `npm start` to start a simple HTTP server on port 8080.
-* Connect to this server in a browser to see which tests fail.
-  * If using your VM, just go to its IP address in your browser.
-* Edit `index.js`; improving and adding code until all the tests pass.
+## Contents
+Herein are:
+  * examples of the `fetch` API.
+  * Unit tests for practicing use of `fetch`.
+
+## Installation & Use
+1. Clone the repository thus:
+   ```bash
+   git clone https://github.com/portsoc/fetch101.git
+   ```
+2. Go into the locally cloned repo:
+   ```bash
+   cd fetch101
+   ```
+3. Start a simple HTTP server on port 8080 with:
+   ```bash
+   npm start
+   ```
+4. See the examples at [http://localhost:8080/examples/](http://localhost:8080/examples/)
+5. Unit tests.
+   * See the unit tests at [http://localhost:8080/](http://localhost:8080/)
+   * Edit `index.js`; improving and adding code until all the tests pass.
 
 ## Examples
+1. fetch_message
+    * Get `message.txt`, from a sever and put in the DOM
 
-We have two sets of examples: modern, using `fetch()`, in `examples/`; and for historical completeness, in `examples/legacy_xhr/` we have XMLHttpRequest-based examples.
+2. fetch_on_button
+    * When a button is pressed, get `message.txt`, from a sever and put in the DOM
 
-All the examples are served at `/examples`; if using your VM and its IP address is 10.11.12.13, the examples will be at `http://10.11.12.13/examples`.
+3. json_data
+    * When a button is pressed, get `data.json`,` from a sever, parse the data and populate an unordered list with it.
 
-### Modern:
+4. response_headers
+    * The first example above, with promises, but without async/await (i.e. more ugly)
 
-* Get message.txt, put in the DOM
-* Do the above at the press of a button
-* Fetch JSON data and fill a list with it
-* The first example above with promises but without async/await
-
-### Legacy XHR:
-
-* Synchronous
-  – The simplest blocking form of AJAX a sychronous request.
-* ReadyStateChange
-  – XHR the original asynchronous way: where you have to care about HTTP status codes.
-* Evented Callbacks
-  – The better way to do asynchronous with XHR.  Includes examples of load and error events.
-* User triggered AJAX
-  – Using a button to provoke content loading.
-* Loading data
-  – Loading a JSON file and adding it to the DOM using JS.
+https://portsoc.github.io/fetch101/examples/1_fetch_message/
+https://portsoc.github.io/fetch101/examples/2_fetch_on_button/
+https://portsoc.github.io/fetch101/examples/3_json_data/
+https://portsoc.github.io/fetch101/examples/4_fetch_promises/
+https://portsoc.github.io/fetch101/examples/5_response_headers/
+https://portsoc.github.io/fetch101/examples/6_other_peoples_data/
