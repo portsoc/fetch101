@@ -1,6 +1,9 @@
 QUnit.config.reorder = false;
 const { test } = QUnit;
 
+function delay(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
 
 test(
 
@@ -9,7 +12,7 @@ test(
   async function (assert) {
     if (!assert.functionExists('showMessage', ['elem', 'url'])) return;
 
-    const message = document.querySelector("#message");
+    const message = document.querySelector('#message');
 
     assert.equal(
       message.textContent,
@@ -42,8 +45,8 @@ test(
   async function (assert) {
     if (!assert.functionExists('showList', ['elem', 'url'])) return;
 
-    const list1 = document.querySelector("#list1");
-    const list2 = document.querySelector("#list2");
+    const list1 = document.querySelector('#list1');
+    const list2 = document.querySelector('#list2');
 
     assert.equal(
       list1.children.length,
@@ -83,7 +86,7 @@ test(
 
   'Create a function `startShowingMessage` that takes two parameters: an element and a string that is a URL. The function will use `setInterval` to make the following task every 1s: fetch the URL and put the response text into the text content of the provided element.',
 
-  function (assert) {
+  async function (assert) {
     if (!assert.functionExists('startShowingMessage', ['elem', 'url'])) return;
     const message2 = document.querySelector('#message2');
 
@@ -95,21 +98,21 @@ test(
 
     startShowingMessage(message2, 'http://jacek.soc.port.ac.uk/tmp/ws/dyn1');
 
-    const done = assert.async(2);
+    await delay(1500);
+    const message = message2.textContent;
+    assert.notEqual(
+      message2.textContent,
+      '',
+      'After 1.5s, the message should not be empty.',
+    );
 
-    setTimeout(checkMessage, 1500);
-    setTimeout(checkMessage, 3000);
 
-    let oldMessage = '';
-    function checkMessage() {
-      assert.notEqual(
-        message2.textContent,
-        oldMessage,
-        'The message should be changing.',
-      );
-      oldMessage = message2.textContent;
-      done();
-    }
+    await delay(1500);
+    assert.notEqual(
+      message2.textContent,
+      message,
+      'The message should be changing.',
+    );
   },
 );
 
@@ -147,12 +150,10 @@ test(
 test(
   "Create a function `drawBox', which accepts two parameters: a canvas element, and a URL which refers to a simple object with coordinates that you should fetch from a server. The function draws a 10x10 filled black box at the given coordinates. Your drawBox function should update the coordinates and redraw the box every 1 second.",
 
-  function (assert) {
+  async function (assert) {
     if (!assert.functionExists('drawBox', ['canvas', 'url'])) return;
 
     const canvas3 = document.querySelector('#canvas3');
-    let oldPicture = canvas3.toDataURL();
-
     drawBox(canvas3, 'http://jacek.soc.port.ac.uk/tmp/ws/dyn2');
 
     assert.ok(
@@ -160,19 +161,19 @@ test(
       'You need to check with your eyes that there is a box changing coordinates every second.',
     );
 
-    const done = assert.async(2);
+    const oldPicture = canvas3.toDataURL();
 
-    setTimeout(checkPicture, 1500);
-    setTimeout(checkPicture, 3000);
+    await delay(1500);
+    const newPicture = canvas3.toDataURL();
+    assert.ok(
+      newPicture !== oldPicture,
+      'After a delay, the picture should have changed.',
+    );
 
-    function checkPicture() {
-      const newPicture = canvas3.toDataURL();
-      assert.ok(
-        newPicture !== oldPicture,
-        'The picture should be changing.',
-      );
-      oldPicture = newPicture;
-      done();
-    }
+    await delay(1500);
+    assert.ok(
+      canvas3.toDataURL() !== newPicture,
+      'After more delay, the picture should have changed again.',
+    );
   },
 );

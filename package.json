@@ -29,7 +29,11 @@
     },
     "globals": {
       "QUnit": "readonly",
-      "showMessage": "writable"
+      "showMessage": "writable",
+      "showList": "writable",
+      "startShowingMessage": "writable",
+      "handleError": "writable",
+      "drawBox": "writable"
     }
   }
 }
