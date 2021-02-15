@@ -30,15 +30,18 @@ Herein are:
 2. fetch_on_button
     * When a button is pressed, get `message.txt`, from a sever and put in the DOM
 
-3. json_data
+3. error_handling
+    * Two buttons are presented.  One fetches `message.txt` which is retrieved successfully.  The second button retrieves `imaginary.file` which does not exist, so a the `response` object's `ok` property (i.e. `response.ok`) will be false; an error messsage is therefore displayed.
+    
+4. json_data
     * When a button is pressed, get `data.json`,` from a sever, parse the data and populate an unordered list with it.
 
-4. response_headers
-    * The first example above, with promises, but without async/await (i.e. more ugly)
+5. response_headers
+    * This extends the error handling example.   The same function is used to process three outcomes when different files are loaded.  In addition to handlng the non-existent file, the response headers are checked to learn the type of the retrieved data.  Different types of data (text and JSON in this example) can be processed differently.
+    
+6. other_peoples_data
+    * Instead of a local JSON file, a remote data file is loaded.
 
-https://portsoc.github.io/fetch101/examples/1_fetch_message/
-https://portsoc.github.io/fetch101/examples/2_fetch_on_button/
-https://portsoc.github.io/fetch101/examples/3_json_data/
-https://portsoc.github.io/fetch101/examples/4_fetch_promises/
-https://portsoc.github.io/fetch101/examples/5_response_headers/
-https://portsoc.github.io/fetch101/examples/6_other_peoples_data/
+7. interaction
+  * user input is taken and used to construct a URL.
+  * the response from the server is used to indicate whether a word is valid in scrabble or not.
