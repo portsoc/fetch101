@@ -1,5 +1,3 @@
-'use strict';
-
 async function fetchData(url) {
   const response = await fetch(url);
   const dt = document.getElementById('dynamicText1');
