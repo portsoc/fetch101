@@ -1,5 +1,3 @@
-import { report } from '../util.mjs';
-
 async function checkWord() {
   const word = document.querySelector('#word');
   const result = document.querySelector('#result');
