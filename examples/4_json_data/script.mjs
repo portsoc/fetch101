@@ -12,7 +12,7 @@ async function fetchData() {
 
 function pageLoaded() {
   const fetchIt = document.querySelector('#fetchit');
-  fetchIt.addEventListener('click', () => fetchData('message.txt'));
+  fetchIt.addEventListener('click', fetchData);
 }
 
 window.addEventListener('load', pageLoaded);
