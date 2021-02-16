@@ -14,12 +14,16 @@ Herein are:
    ```bash
    cd fetch101
    ```
-3. Start a simple HTTP server on port 8080 with:
+3. Install libraries (including the http server we use in the next stage):
+   ```bash
+   npm install
+   ```
+4. Start a simple HTTP server on port 8080 with:
    ```bash
    npm start
    ```
-4. See the examples at [http://localhost:8080/examples/](http://localhost:8080/examples/)
-5. Unit tests.
+5. See the examples at [http://localhost:8080/examples/](http://localhost:8080/examples/)
+6. Unit tests.
    * See the unit tests at [http://localhost:8080/](http://localhost:8080/)
    * Edit `index.js`; improving and adding code until all the tests pass.
 
@@ -32,13 +36,13 @@ Herein are:
 
 3. error_handling
     * Two buttons are presented.  One fetches `message.txt` which is retrieved successfully.  The second button retrieves `imaginary.file` which does not exist, so a the `response` object's `ok` property (i.e. `response.ok`) will be false; an error messsage is therefore displayed.
-    
+
 4. json_data
     * When a button is pressed, get `data.json`,` from a sever, parse the data and populate an unordered list with it.
 
 5. response_headers
     * This extends the error handling example.   The same function is used to process three outcomes when different files are loaded.  In addition to handlng the non-existent file, the response headers are checked to learn the type of the retrieved data.  Different types of data (text and JSON in this example) can be processed differently.
-    
+
 6. other_peoples_data
     * Instead of a local JSON file, a remote data file is loaded.
 
