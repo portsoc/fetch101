@@ -29,7 +29,7 @@ Herein are:
 
 ## Examples
 1. fetch_message
-    * Get `message.txt`, from a sever and put in the DOM
+    * Get `message.txt`, from a server and put in the DOM
 
 2. fetch_on_button
     * When a button is pressed, get `message.txt`, from a sever and put in the DOM
