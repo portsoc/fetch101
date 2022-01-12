@@ -32,13 +32,13 @@ Herein are:
     * Get `message.txt`, from a server and put in the DOM
 
 2. fetch_on_button
-    * When a button is pressed, get `message.txt`, from a sever and put in the DOM
+    * When a button is pressed, get `message.txt`, from a server and put in the DOM
 
 3. error_handling
     * Two buttons are presented.  One fetches `message.txt` which is retrieved successfully.  The second button retrieves `imaginary.file` which does not exist, so a the `response` object's `ok` property (i.e. `response.ok`) will be false; an error messsage is therefore displayed.
 
 4. json_data
-    * When a button is pressed, get `data.json`,` from a sever, parse the data and populate an unordered list with it.
+    * When a button is pressed, get `data.json` from a server, parse the data and populate an unordered list with it.
 
 5. response_headers
     * This extends the error handling example.   The same function is used to process three outcomes when different files are loaded.  In addition to handlng the non-existent file, the response headers are checked to learn the type of the retrieved data.  Different types of data (text and JSON in this example) can be processed differently.
