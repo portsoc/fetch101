@@ -7,7 +7,7 @@ async function checkWord() {
     return;
   }
 
-  const url = 'https://dictionary-dot-sse-2020.nw.r.appspot.com/' + word.value;
+  const url = 'https://dictionary-dot-gse-val.ey.r.appspot.com/' + word.value;
   const response = await fetch(url);
 
   switch (response.status) {
