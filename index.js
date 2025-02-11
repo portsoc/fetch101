@@ -6,3 +6,9 @@
  */
 
 'use strict';
+
+async function showMessage(elem, url) {
+  const response = await fetch(url);
+  const content = await response.text();
+  elem.textContent = content;
+}

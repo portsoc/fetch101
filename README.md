@@ -28,8 +28,11 @@ Herein are:
    * Edit `index.js`; improving and adding code until all the tests pass.
 
 ## Examples
-1. fetch_message
+0. fetch_message
     * Get `message.txt`, from a server and put in the DOM
+
+1. fetch_message
+    * Get `message.txt`, from a server and put in the DOM (use a function, avoiding global scope code)
 
 2. fetch_on_button
     * When a button is pressed, get `message.txt`, from a server and put in the DOM

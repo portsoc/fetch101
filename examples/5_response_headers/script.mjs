@@ -1,4 +1,18 @@
-import { report } from '../util.mjs';
+function report(data, error = false, target = '#responses') {
+  // we always want the message to be an array so if
+  // it's a sting, make it an array of one string
+  if (typeof data === 'string') data = [data];
+
+  const list = document.querySelector(target);
+
+  // loop over every array element and report it
+  for (const i of data) {
+    const li = document.createElement('li');
+    li.textContent = i;
+    li.classList.toggle('error', error);
+    list.append(li);
+  }
+}
 
 async function fetchData(url) {
   const response = await fetch(url);

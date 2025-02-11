@@ -11,9 +11,12 @@ async function fetchData(url) {
   }
 }
 
+
 function pageLoaded() {
   const fetchIt = document.querySelector('#fetchit');
   const fetchError = document.querySelector('#fetcherror');
+
+  // this is where anonymous functions are suddenly *really* useful
   fetchIt.addEventListener('click', () => fetchData('message.txt'));
   fetchError.addEventListener('click', () => fetchData('imaginary.file'));
 }
