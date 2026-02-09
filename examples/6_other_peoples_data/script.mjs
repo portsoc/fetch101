@@ -1,4 +1,4 @@
-export function report(data, error = false, target = '#responses') {
+function report(data, error = false, target = '#responses') {
   // we always want the message to be an array so if
   // it's a sting, make it an array of one string
   if (typeof data === 'string') data = [data];
