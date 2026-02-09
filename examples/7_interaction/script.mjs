@@ -7,7 +7,7 @@ async function checkWord() {
     return;
   }
 
-  const url = 'https://dictionary-dot-gse-val.ey.r.appspot.com/' + word.value;
+  const url = `https://dictionary-dot-gse-val.ey.r.appspot.com/${word.value}`;
   const response = await fetch(url);
 
   switch (response.status) {
