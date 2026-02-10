@@ -5,6 +5,8 @@ function delay(ms) {
   return new Promise(resolve => setTimeout(resolve, ms));
 }
 
+const SERVER_HOSTNAME = 'https://webpro.drmatt.dev';
+
 test(
 
   'Create a function `showMessage` that takes two parameters: an element and a string that is a URL. The function will fetch the URL and put the response text into the text content of the provided element.',
@@ -20,7 +22,7 @@ test(
       'Before running the function, the element is empty.',
     );
 
-    await showMessage(message, 'https://webpro.drmatt.dev/hello');
+    await showMessage(message, `${SERVER_HOSTNAME}/hello`);
 
     assert.equal(
       message.textContent,
@@ -28,7 +30,7 @@ test(
       'The server message "live long and prosper" should be in the page.',
     );
 
-    await showMessage(message, 'https://webpro.drmatt.dev/bye');
+    await showMessage(message, `${SERVER_HOSTNAME}/bye`);
 
     assert.equal(
       message.textContent,
@@ -54,7 +56,7 @@ test(
       'Before running the function, the list is empty.',
     );
 
-    await showList(list1, 'https://webpro.drmatt.dev/arr8');
+    await showList(list1, `${SERVER_HOSTNAME}/arr8`);
 
     assert.equal(
       list1.children.length,
@@ -67,7 +69,7 @@ test(
       'Return of the Jedi',
     );
 
-    await showList(list2, 'https://webpro.drmatt.dev/arr2');
+    await showList(list2, `${SERVER_HOSTNAME}/arr2`);
 
     assert.equal(
       list2.children.length,
@@ -96,7 +98,7 @@ test(
       'Before running the function, the message is empty.',
     );
 
-    startShowingMessage(message2, 'https://webpro.drmatt.dev/dyn1');
+    startShowingMessage(message2, `${SERVER_HOSTNAME}/dyn1`);
 
     await delay(1500);
     const message = message2.textContent;
@@ -131,14 +133,14 @@ test(
       'Before running the function, the message is empty.',
     );
 
-    await handleError(message3, 'https://webpro.drmatt.dev/hello');
+    await handleError(message3, `${SERVER_HOSTNAME}/hello`);
     assert.strictEqual(
       message3.textContent,
       'Live long and prosper!\n',
       'The message from the server should be there.',
     );
 
-    await handleError(message3, 'https://webpro.drmatt.dev/404');
+    await handleError(message3, `${SERVER_HOSTNAME}/404`);
     assert.strictEqual(
       message3.textContent,
       'OH DEAR',
@@ -154,7 +156,7 @@ test(
     if (!assert.functionExists('drawBox', ['canvas', 'url'])) return;
 
     const canvas3 = document.querySelector('#canvas3');
-    drawBox(canvas3, 'https://webpro.drmatt.dev/dyn2');
+    drawBox(canvas3, `${SERVER_HOSTNAME}/dyn2`);
 
     assert.ok(
       true,

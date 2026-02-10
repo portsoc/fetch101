@@ -1,6 +1,6 @@
 async function fetchData(url) {
   const response = await fetch(url);
-  const dt = document.getElementById('dynamicText1');
+  const dt = document.querySelector('#dynamicText1');
   if (response.ok) {
     const text = await response.text();
     dt.textContent = text;
