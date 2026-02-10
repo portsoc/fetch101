@@ -20,7 +20,7 @@ test(
       'Before running the function, the element is empty.',
     );
 
-    await showMessage(message, 'http://jacek.soc.port.ac.uk/tmp/ws/hello');
+    await showMessage(message, 'https://webpro.drmatt.dev/hello');
 
     assert.equal(
       message.textContent,
@@ -28,7 +28,7 @@ test(
       'The server message "live long and prosper" should be in the page.',
     );
 
-    await showMessage(message, 'http://jacek.soc.port.ac.uk/tmp/ws/bye');
+    await showMessage(message, 'https://webpro.drmatt.dev/bye');
 
     assert.equal(
       message.textContent,
@@ -54,7 +54,7 @@ test(
       'Before running the function, the list is empty.',
     );
 
-    await showList(list1, 'http://jacek.soc.port.ac.uk/tmp/ws/arr8');
+    await showList(list1, 'https://webpro.drmatt.dev/arr8');
 
     assert.equal(
       list1.children.length,
@@ -67,7 +67,7 @@ test(
       'Return of the Jedi',
     );
 
-    await showList(list2, 'http://jacek.soc.port.ac.uk/tmp/ws/arr2');
+    await showList(list2, 'https://webpro.drmatt.dev/arr2');
 
     assert.equal(
       list2.children.length,
@@ -96,7 +96,7 @@ test(
       'Before running the function, the message is empty.',
     );
 
-    startShowingMessage(message2, 'http://jacek.soc.port.ac.uk/tmp/ws/dyn1');
+    startShowingMessage(message2, 'https://webpro.drmatt.dev/dyn1');
 
     await delay(1500);
     const message = message2.textContent;
@@ -131,14 +131,14 @@ test(
       'Before running the function, the message is empty.',
     );
 
-    await handleError(message3, 'http://jacek.soc.port.ac.uk/tmp/ws/hello');
+    await handleError(message3, 'https://webpro.drmatt.dev/hello');
     assert.strictEqual(
       message3.textContent,
       'Live long and prosper!\n',
       'The message from the server should be there.',
     );
 
-    await handleError(message3, 'http://jacek.soc.port.ac.uk/tmp/ws/404');
+    await handleError(message3, 'https://webpro.drmatt.dev/404');
     assert.strictEqual(
       message3.textContent,
       'OH DEAR',
@@ -154,7 +154,7 @@ test(
     if (!assert.functionExists('drawBox', ['canvas', 'url'])) return;
 
     const canvas3 = document.querySelector('#canvas3');
-    drawBox(canvas3, 'http://jacek.soc.port.ac.uk/tmp/ws/dyn2');
+    drawBox(canvas3, 'https://webpro.drmatt.dev/dyn2');
 
     assert.ok(
       true,
